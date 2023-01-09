@@ -1,13 +1,10 @@
-## Getting Started
+##  Version
 
-First, run the local server:
-
-## Use Docker Compose
-
-create Container build
-```
-docker-compose up -d --build
-```
+- PHP 8.1 +
+-  Pie 9.0
+- Android Oreo 8.1
+- Android Nougat 7.1.1
+- Android Marshmallow 6.0
 
 ## API endpoint Port :8000
 
@@ -42,9 +39,31 @@ port: 3360
 
 ![alt text](./doc/assets/images/sql.png '')
 
-## DB .sql for import table 
+## How to run
 
-```
-./db
-```
+### step 1 import .sql file to db
+
+##### select db blueVending (name in dockerfile)
+![alt text](./doc/assets/images/selectDB.png '')
+
+    
+##### import .sql in path ./db (all-blueVending_2023-01-09.sql)
+![alt text](./doc/assets/images/import.png '')
+
+
+##### have a default DB 
 ![alt text](./doc/assets/images/db.png '')
+
+##  Now Use Docker Compose !!!
+create Container build
+```
+docker-compose up -d --build
+```
+##### have a 4 CONTAINER in Docker
+![alt text](./doc/assets/images/docker.png '')
+
+
+## Enjoy with FE
+```
+https://github.com/jackkung0020/vending-machine-react
+```
