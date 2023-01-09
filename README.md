@@ -1,10 +1,6 @@
 ##  Version
 
 - PHP 8.1 +
--  Pie 9.0
-- Android Oreo 8.1
-- Android Nougat 7.1.1
-- Android Marshmallow 6.0
 
 ## API endpoint Port :8000
 
