@@ -1,0 +1,59 @@
+
+version: '3.8' # version docker compose
+services:
+
+  php:
+    build: ./docker-php
+    working_dir: /var/www/laravel
+    volumes:
+      - ./:/var/www/laravel 
+
+  nginx:
+    build: ./docker-nginx
+    container_name: webserver
+    working_dir: /var/www/laravel
+    platform: linux/x86_64 # if no M1 remove this line
+    volumes_from:
+      - php
+    ports:
+      - 8000:80
+  database:
+    image: mysql:5.7 
+    restart: always
+    platform: linux/x86_64 # if no M1 remove this line
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE='blueVending' #  database name
+      - MYSQL_USER='user'
+      - MYSQL_PASSWORD='password'
+      - MYSQL_ROOT_PASSWORD='root'
+      - PMA_HOST=mysql
+    ports:
+        - "3306:3306"
+
+  composer: #  container for install package larave
+    build: ./docker-php # use dockerfile in  container php
+    working_dir: /var/www/laravel
+    volumes_from:
+      - php
+    command: "composer install"
+
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpadmin
+    platform: linux/x86_64 # if no M1 remove this line
+    ports:
+        - 8891:80
+    environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=database
+    restart: always
+    depends_on:
+        - database
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  database:
+    driver: local
