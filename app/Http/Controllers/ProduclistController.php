@@ -52,8 +52,8 @@ class ProduclistController extends Controller
         DB::table('product')->insert(
             [
                 'name' => $request->name,
-                'price' => $request->price,
-                'storage' => $request->storage,
+                'price' => (int) $request->price,
+                'storage' => (int) $request->storage,
                 'typeKey' => $request->typeKey,
                 'typeName' => $request->typeName,
                 'image' => $request->image,
@@ -71,8 +71,8 @@ class ProduclistController extends Controller
         ->update(
             [
                 'name' => $request->name,
-                'price' => $request->price,
-                'storage' => $request->storage,
+                'price' => (int) $request->price,
+                'storage' => (int) $request->storage,
                 'typeKey' => $request->typeKey,
                 'typeName' => $request->typeName,
                 'image' => $request->image,
