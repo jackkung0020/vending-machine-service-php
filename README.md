@@ -44,9 +44,27 @@ port: 3360
 ##### select db blueVending (name in dockerfile)
 ![alt text](./doc/assets/images/selectDB.png '')
 
-    
-##### import .sql in path ./db (all-blueVending_2023-01-09.sql)
+##### check db blueVending table product
+![alt text](./doc/assets/images/product.png '')
+
+
+### if don'n have DB
+##### go to import .sql in path ./db (all-blueVending_2023-01-09.sql)
 ![alt text](./doc/assets/images/import.png '')
+
+## set APP_KEY in .env 
+- fine a PORTS 9000 in docker ps
+- copy CONTAINER ID
+ ```
+docker exec -it {CONTAINER ID} bash
+ ```
+ ![alt text](./doc/assets/images/im1.png '')
+
+
+RUN 
+ ```
+    php artisan key:generate
+```
 
 ## API endpoint Port :8000
 
