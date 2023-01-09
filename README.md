@@ -25,6 +25,8 @@ http://localhost:8891
 username: user
 password: password
 
+![alt text](./doc/assets/images/phpadmin.png '')
+
 ## or (you have tools for connect DB) Sequel Pro, Workbench
 
 
