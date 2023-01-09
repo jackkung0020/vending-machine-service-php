@@ -47,9 +47,6 @@ port: 3360
 ![alt text](./doc/assets/images/import.png '')
 
 
-##### have a default DB 
-![alt text](./doc/assets/images/db.png '')
-
 ##  Now Use Docker Compose !!!
 create Container build
 ```
