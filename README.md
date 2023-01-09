@@ -18,6 +18,7 @@ Start on
 http://localhost:8891
 ```
 username: user
+
 password: password
 
 ![alt text](./doc/assets/images/phpadmin.png '')
