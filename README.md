@@ -2,12 +2,14 @@
 
 - PHP 8.1 +
 
-## API endpoint Port :8000
+##  Use Docker Compose !!!
+create Container build
+```
+docker-compose up -d --build
+```
 
-Start on
-```
-http://localhost:8000/api/...
-```
+##### have a 4 CONTAINER in Docker
+![alt text](./doc/assets/images/docker.png '')
 
 ## phpMyAdmin page for look mySQL DB
 
@@ -46,15 +48,12 @@ port: 3360
 ##### import .sql in path ./db (all-blueVending_2023-01-09.sql)
 ![alt text](./doc/assets/images/import.png '')
 
+## API endpoint Port :8000
 
-##  Now Use Docker Compose !!!
-create Container build
+Start on
 ```
-docker-compose up -d --build
+http://localhost:8000/api/...
 ```
-##### have a 4 CONTAINER in Docker
-![alt text](./doc/assets/images/docker.png '')
-
 
 ## Enjoy with FE
 ```
